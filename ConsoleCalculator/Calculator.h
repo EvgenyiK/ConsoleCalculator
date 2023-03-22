@@ -1,22 +1,33 @@
 #pragma once
 #include <vector>
 #include <map>
+#include <string>
 
 
 class Calculator
 {
 private:
-	double n1 ;
-	double n2 ;
 	double ret;
-	std::map<std::string, int> vars;
-	std::map<std::string, int> funcs;
 public:
-	Calculator(double id1, double id2):n1{id1},n2{id2}
+	std::map<std::string, double> vars;
+	std::map<std::string, double> funcs;
+
+private:
+	void parse(const std::string& userEnteredCommand);
+public:
+	Calculator()
 	{
 	};
 	~Calculator() {};
+
 	double Calculate(double x, char oper, double y);
-	void print(double ret);
+	void var(std::string n);
+	void let(std::string n,double d);
+	void print();
+	void prinvars();
+	void prinfs();
 };
+
+
+
 
