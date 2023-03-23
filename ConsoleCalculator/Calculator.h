@@ -2,6 +2,7 @@
 #include <vector>
 #include <map>
 #include <string>
+#include <sstream>
 
 
 class Calculator
@@ -12,8 +13,6 @@ public:
 	std::map<std::string, double> vars;
 	std::map<std::string, double> funcs;
 
-private:
-	void parse(const std::string& userEnteredCommand);
 public:
 	Calculator()
 	{
@@ -29,5 +28,7 @@ public:
 };
 
 
+std::vector<std::string>& split(const std::string& s, char delim, std::vector<std::string>& elems);
+std::vector<std::string> split(const std::string& s, char delim);
 
 
