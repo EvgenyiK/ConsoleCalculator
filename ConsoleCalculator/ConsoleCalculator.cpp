@@ -5,18 +5,44 @@ int main()
 {
 
 	Calculator c;
-
 	std::string userEnteredCommand;
-	std::getline(std::cin, userEnteredCommand);
-	std::vector<std::string> parsedString(split(userEnteredCommand, ' '));
-	for (const auto& elem : parsedString)
-		std::cout << elem << "\n";
+	
+	
+	/*for (const auto& elem : parsedString)
+		std::cout << elem << "\n";*/
 
-	c.var("adl");
-	c.let("adl", 2.2);
+	while (std::getline(std::cin, userEnteredCommand))
+	{
+		auto parsedString(split(userEnteredCommand, ' '));
 
-	c.print();
-	c.prinvars();
+		if (parsedString[0] == "var")
+		{
+			c.var(parsedString[1]);
+		}
+		else if (parsedString[0] == "let")
+		{
+			auto p2 = split(parsedString[1], '=');
+			c.let(p2[0], std::stod(p2[1]));
+		}
+		else if (parsedString[0] == "fn")
+		{
+			c.fn(parsedString[1]);
+		}
+		else if (parsedString[0] == "printvars")
+		{
+			c.printvars();
+		}
+		else if (parsedString[0] == "printfns")
+		{
+			c.printfs();
+		}
+	}
+	
+
+
+	
+	
+	
 
 	/*while (true)
 	{

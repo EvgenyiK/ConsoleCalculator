@@ -9,7 +9,6 @@ class Calculator
 {
 private:
 	double ret;
-public:
 	std::map<std::string, double> vars;
 	std::map<std::string, double> funcs;
 
@@ -21,10 +20,11 @@ public:
 
 	double Calculate(double x, char oper, double y);
 	void var(std::string n);
-	void let(std::string n,double d);
-	void print();
-	void prinvars();
-	void prinfs();
+	void let(std::string n, double d);
+	double fn(std::string n1);
+	void print(std::string s);
+	void printvars();
+	void printfs();
 };
 
 
