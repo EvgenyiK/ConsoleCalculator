@@ -7,9 +7,6 @@ int main()
 	Calculator c;
 	std::string userEnteredCommand;
 	
-	
-	/*for (const auto& elem : parsedString)
-		std::cout << elem << "\n";*/
 
 	while (std::getline(std::cin, userEnteredCommand))
 	{
